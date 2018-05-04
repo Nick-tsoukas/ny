@@ -1,7 +1,3 @@
-//https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=e6232090e8d345099a6b09812a7c5bd8
-
-//https://api.nytimes.com/svc/search/v2/articlesearch.json?q=donaldtump&api-key=e6232090e8d345099a6b09812a7c5bd8
-
 
 function call(search){
   var url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${search}&api-key=e6232090e8d345099a6b09812a7c5bd8`;
@@ -19,11 +15,19 @@ function call(search){
       </div>
       <br>
       `;
-      $('#testing').append(template);
+      $('#searchResults').prepend(template);
       console.log(val.snippet)
     })
   })
 
 }
 
-call('donald trump')
+// call('donald trump')
+
+$("#submitButton").on('click', function(e){
+  e.preventDefault();
+  console.log('you clicked ')
+  var t = $("#searchTerm").val();
+  call(t);
+
+})
