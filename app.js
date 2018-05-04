@@ -12,6 +12,7 @@ function call(search){
       `<div>
       <h1>${val.headline.main}</h1>
       <p>${val.snippet}</p>
+      <p><a href=${val.web_url}>${val.web_url}</a></p>
       </div>
       <br>
       `;
@@ -24,7 +25,7 @@ function call(search){
 
 // call('donald trump')
 
-$("#submitButton").on('click', function(e){
+$("#Button").on('click', function(e){
   e.preventDefault();
   console.log('you clicked ')
   var t = $("#searchTerm").val();
